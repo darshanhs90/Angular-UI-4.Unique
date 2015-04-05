@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular UI</title>
+	<style>
+	</style>
+	<script type="text/javascript" src="public/lib/angular/angular.min.js"></script>
+	<script type="text/javascript" src="public/lib/angular-ui-utils/ui-utils.min.js"></script>
+	<script type="text/javascript" src="public/lib/angular-sanitize/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-controller="MainController">
+	<button ng-click="field='id'">ID</button>
+	<button ng-click="field='fn'">First name</button>
+	<button ng-click="field='ln'">Last name</button>
+	<table><thead>
+		<tr>
+			<th>ID</th>
+			<th>fn</th>
+			<th>ln</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in items|unique:field">
+				<td>{{item.id}}</td>
+				<td>{{item.fn}}</td>
+				<td>{{item.ln}}</td>
+			</tr>
+			
+			
+		</tbody>
+	</table>
+</body>
+</html>
